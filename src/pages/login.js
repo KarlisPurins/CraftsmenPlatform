@@ -2,10 +2,11 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
+import LoginForm from '../components/loginForm'
 
-const BlogPage = ({ data }) => {
+const LoginPage = ({ data }) => {
   return (
-    <Layout pageTitle="Blogs">
+    <Layout pageTitle="Ielogoties">
       <ul>
       {
         data.allFile.nodes.map(node => (
@@ -15,13 +16,18 @@ const BlogPage = ({ data }) => {
         ))
       }
       </ul>
+      <LoginForm buttonText={"Ielogoties"}>
+      </LoginForm>
+    
+      
     </Layout>
+    
   )
 }
 
 export const query = graphql`
   query {
-    allFile (filter: {sourceInstanceName: {eq: "blog"}}) {
+    allFile (filter: {sourceInstanceName: {eq: "login"}}) {
       nodes {
         name
       }
@@ -29,6 +35,6 @@ export const query = graphql`
   }
 `
 
-export const Head = () => <Seo title="My Blog Posts" />
+export const Head = () => <Seo title="Login" />
 
-export default BlogPage
+export default LoginPage

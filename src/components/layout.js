@@ -9,6 +9,7 @@ import {
     siteTitle
   } from './layout.module.css'
 
+
 const Layout = ({ pageTitle, children }) => {
     const data = useStaticQuery(graphql`
     query MyQuery {
@@ -27,16 +28,31 @@ const Layout = ({ pageTitle, children }) => {
       <nav>
         <ul className={navLinks}>
           <li className={navLinkItem}>
-            <Link to="/" className={navLinkText}>Home</Link>
+            <Link to="/" className={navLinkText}>
+              Veikals
+            </Link>
           </li>
           <li className={navLinkItem}>
-            <Link to="/about" className={navLinkText}>About</Link>
+            <Link to="/about" className={navLinkText}>
+              Par Mums
+            </Link>
           </li>
           <li className={navLinkItem}>
             <Link to="/blog" className={navLinkText}>
-              Blog
+              Blogs
             </Link>
           </li>
+          <li className={navLinkItem}>
+            <Link to="/contacts" className={navLinkText}>
+              Kontakti
+            </Link>
+          </li>
+            <li className={navLinkItem}>
+            <Link to="/login" className={navLinkText}>
+              Mans Profils
+            </Link>
+          </li>
+          
         </ul>
       </nav>
       <main>
